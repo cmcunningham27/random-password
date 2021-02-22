@@ -25,9 +25,9 @@ function generatePassword() {
     var length = parseInt(passwordLength);
     console.log(length);
 
-    if (passwordLength < 8 || passwordLength > 128) {
+    while (passwordLength < 8 || passwordLength > 128) {
       console.log(passwordLength);
-      generatePassword();
+      passwordLength = prompt("Please enter the number of characters you want in your password. It must have at least 8 and no more than 128.");
     };
 
     //confirms for all the criteria the user can choose from
@@ -37,11 +37,12 @@ function generatePassword() {
     var special = confirm("Would you like special characters in your password?");
 
     //This provides a reminder confirm for the user to how many characters they can choose
-    if (!upperCase && !lowerCase && !number && !special) {
-      var error = confirm("You must pick at least one criteria to create your password (uppercase, lowercase, numbers, or special.");
-      if (error) {
-        generatePassword();
-      }
+    while (!upperCase && !lowerCase && !number && !special) {
+         alert("You must pick at least one criteria to create your password (uppercase, lowercase, numbers, or special.");
+         upperCase = confirm("Would you like upper case letters in your password?");
+         lowerCase = confirm("Would you like lower case letters in your password?");
+         number = confirm("Would you like numbers in your password?");
+         special = confirm("Would you like special characters in your password?");
     };
 
     //Declare an empty Array that will have criteria values plugged in when user chooses them
