@@ -3,9 +3,10 @@ var generateBtn = document.querySelector("#generate");
 
 //Declaring all the variables for the four different criteria the user can choose from
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lower = upper.toLowerCase;
+var lower = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
 
 // Write password to the #password input
 function writePassword() {
@@ -51,23 +52,26 @@ function generatePassword() {
     //if user chooses upper case letters in their password, the string will be pushed to the empty Array
     if (upperCase) {
         pswArray.push(upper);
-        console.log(pswArray);
+        //console.log(pswArray);
     };
     //if user chooses lower case letters in their password, the string will be pushed to the empty Array
     if (lowerCase) {
         pswArray.push(lower);
-        console.log(pswArray);
+        //console.log(pswArray);
     }; 
     //if user chooses numbers in their password, the string will be pushed to the empty Array
     if (number) {
         pswArray.push(numbers);
-        console.log(pswArray);
+        //console.log(pswArray);
     }; 
     //if user chooses special characters in their password, the string will be pushed to the empty Array
     if (special) {
         pswArray.push(specialChar);
         console.log(pswArray);
     };
+
+    //
+    passWord = " ";
 
     //loop to find random characters within the chosen main Array to be used in the password until all of the password length has been filled
     for (var i = 0; i < passwordLength; i++) {
@@ -92,5 +96,11 @@ function generatePassword() {
         //chooses which character from the maller array will be used in the password
         randomCharacter = randomCriteriaArray[randomCriteriaArrayNum];
         console.log(randomCharacter);
-    }
+
+        //adds new character to the passWord string
+        passWord += randomCharacter;
+    
+    }  
+        //returns the whole passWord that follows the users chosen criteria
+        return passWord;
 };
