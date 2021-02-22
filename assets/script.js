@@ -69,5 +69,28 @@ function generatePassword() {
         console.log(pswArray);
     };
 
+    //loop to find random characters within the chosen main Array to be used in the password until all of the password length has been filled
+    for (var i = 0; i < passwordLength; i++) {
 
-}
+        let mainArrayNumber;
+        let randomCriteriaArray;
+        let randomCriteriaArrayNum;
+        let randomCharacter;
+
+        //produces a random number from the 4 part main Array either 0,1,2,or 3
+        mainArrayNumber = Math.floor(Math.random() * pswArray.length);
+        console.log(mainArrayNumber);
+
+        //chooses which array within the main array was chosen by plugging in the number into pswArrays array box "[]"
+        randomCriteriaArray = pswArray[mainArrayNumber];
+        console.log(randomCriteriaArray);
+
+        //produces a random number from the total length of the smaller array that was chosen
+        randomCriteriaArrayNum = Math.floor(Math.random() * randomCriteriaArray.length);
+        console.log(randomCriteriaArrayNum);
+
+        //chooses which character from the maller array will be used in the password
+        randomCharacter = randomCriteriaArray[randomCriteriaArrayNum];
+        console.log(randomCharacter);
+    }
+};
