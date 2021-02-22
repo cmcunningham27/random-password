@@ -26,6 +26,10 @@ function generatePassword() {
     var length = parseInt(passwordLength);
     console.log(length);
 
+    if (input === null) {
+        return;
+    };
+
     while (passwordLength < 8 || passwordLength > 128) {
       console.log(passwordLength);
       passwordLength = prompt("Please enter the number of characters you want in your password. It must have at least 8 and no more than 128.");
@@ -70,7 +74,7 @@ function generatePassword() {
         console.log(pswArray);
     };
 
-    //
+    //creates an empty string for each character to be inserted into
     passWord = " ";
 
     //loop to find random characters within the chosen main Array to be used in the password until all of the password length has been filled
