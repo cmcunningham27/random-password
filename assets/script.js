@@ -26,7 +26,7 @@ function generatePassword() {
     var length = parseInt(passwordLength);
     console.log(length);
 
-    if (input === null) {
+    if (passwordLength === null) {
         return;
     };
 
